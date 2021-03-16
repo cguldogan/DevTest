@@ -1,0 +1,21 @@
+<h2>Customer list</h2>
+<table spacing="0">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let customer of customers">
+            <td>{{customer.customerId}}</td>
+            <td>{{customer.customerName}}</td>
+            <td>{{customer.customerType}}</td>
+            <td>
+                <a [routerLink]="['/customers', customer.customerId]">Open</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

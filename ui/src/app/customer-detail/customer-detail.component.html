@@ -1,0 +1,9 @@
+<p>Customer Id: {{customer?.customerId}}</p>
+<p>Customer Name: {{customer?.customerName}}</p>
+<p>Customer Type: {{customer?.customerType}}</p>
+
+<p><span *ngIf="!customer?.jobName">Customer Job: Undefined</span></p>
+<p><span *ngIf="customer?.jobName">Customer Job: {{customer?.jobName}}</span></p>
+
+
+<a [routerLink]="['/customers']">Back</a>

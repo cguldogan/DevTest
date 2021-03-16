@@ -8,21 +8,32 @@ import { AppComponent } from './app.component';
 import { JobComponent } from './job/job.component';
 import { HomeComponent } from './home/home.component';
 import { JobDetailComponent } from './job-detail/job-detail.component';
+import { CustomerComponent } from './customer/customer.component';
+import { CustomerService } from './services/customer.service';
+import { CustomerListComponent } from './customer-list/customer-list.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     JobComponent,
     HomeComponent,
-    JobDetailComponent
+    JobDetailComponent,
+    CustomerComponent,
+    CustomerListComponent,
+    CustomerDetailComponent
   ],
   imports: [
     FormsModule,
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    CustomerService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

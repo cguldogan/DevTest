@@ -1,5 +1,16 @@
 <h2>New job form</h2>
 <form #jobForm="ngForm" (ngSubmit)="createJob(jobForm)">
+
+  <label>Customer</label><br>
+    <select name="customer" required #customer="ngModel" ngModel placeholder="Please select" [(ngModel)]="newJob.customer">
+         <option [ngValue]="undefined" selected>Please select</option>
+        <option *ngFor="let customer of customers;" [value]="customer.customerId">
+            {{ customer.customerName }}
+        </option>
+    </select>
+    <small *ngIf="customer.invalid">Please select an customer</small>
+    <br>
+
   <label for="engineer">Engineer</label>
   <select name="engineer" required #engineer="ngModel" ngModel placeholder="Please select" [(ngModel)]="newJob.engineer">
     <option [ngValue]="undefined" selected>Please select</option>
